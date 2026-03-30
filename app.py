@@ -1,5 +1,5 @@
 from gevent.pywsgi import WSGIServer
-from flask import Flask, render_template, abort, send_from_directory
+from flask import Flask, render_template, abort, send_from_directory, redirect, url_for
 from werkzeug.utils import safe_join
 import os
 import glob
@@ -172,6 +172,12 @@ def post_detail(slug):
     if not post:
         abort(404)
     return render_template('post.html', post=post)
+
+
+# compatibility: redirect old /post/<slug> to new /blog/post/<slug>
+@app.route('/post/<slug>')
+def post_legacy(slug):
+    return redirect(url_for('post_detail', slug=slug))
 
 if __name__ == '__main__':
     keyfile = '/etc/nginx/yuanqianchen.com.key'
