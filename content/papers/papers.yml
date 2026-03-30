@@ -1,0 +1,8 @@
+# papers metadata: filename -> metadata
+# filename must match file in this directory (e.g. sample-paper.pdf)
+sample-paper.txt:
+  title: 示例论文：我的研究工作
+  authors: 袁乾宸
+  year: 2026
+  gs_link: "https://scholar.google.com/scholar?q=示例论文+袁乾宸"
+  note: "示例占位文件，替换为真实 PDF 可下载。"

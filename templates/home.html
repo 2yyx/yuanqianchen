@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container">
+  <h2>袁乾宸</h2>
+  <p>欢迎来到我的个人主页。下面显示简历摘要，更多信息请查看完整页面。</p>
+  {% include '_resume_snippet.html' %}
+  <p>
+    <a href="/papers">论文与下载</a> · <a href="/blog">博客</a>
+  </p>
+</section>
+
+<section class="container">
+  <h3>论文（按年份）</h3>
+  {% if papers_by_year %}
+    {% for year, items in papers_by_year.items() %}
+      <h4>{{ year }}</h4>
+      <ul>
+        {% for it in items %}
+          <li>
+            <strong>{{ it.title }}</strong>
+            {% if it.authors %} — {{ it.authors }}{% endif %}
+            {% if it.note %} — {{ it.note }}{% endif %}
+            — <a href="/papers/download/{{ it.filename }}">下载</a>
+            {% if it.gs_link %} — <a href="{{ it.gs_link }}" target="_blank" rel="noopener">Google 学术</a>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>暂无论文记录。</p>
+  {% endif %}
+</section>
+
+{% endblock %}

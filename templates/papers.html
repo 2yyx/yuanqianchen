@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container">
+  <h2>论文与资料</h2>
+  {% if files %}
+    <ul>
+      {% for f in files %}
+      <li>
+        <strong>{{ f.title }}</strong>
+        {% if f.authors %} — {{ f.authors }}{% endif %}
+        {% if f.year %} ({{ f.year }}){% endif %}
+        — <a href="/papers/download/{{ f.filename }}">下载</a>
+        {% if f.gs_link %} — <a href="{{ f.gs_link }}" target="_blank" rel="noopener">Google 学术</a>{% endif %}
+        {% if f.note %}<div class="paper-note">{{ f.note }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>暂无论文文件。将 PDF 放入 <code>content/papers</code> 目录。</p>
+  {% endif %}
+</section>
+
+{% endblock %}

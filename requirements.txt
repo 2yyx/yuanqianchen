@@ -3,3 +3,4 @@ gevent
 Markdown
 python-frontmatter
 Pygments
+PyYAML
