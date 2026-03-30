@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="post-single container">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-meta">{{ post.date }}</p>
+    <div class="post-content">{{ post.content|safe }}</div>
+    <p><a href="/">← 返回首页</a></p>
+</article>
+
+{% endblock %}

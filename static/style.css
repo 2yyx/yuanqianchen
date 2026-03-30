@@ -1,0 +1,43 @@
+/* Minimal blog styles */
+:root{--bg:#fafafa;--text:#222;--accent:#2b7a78}
+*{box-sizing:border-box}
+body{font-family:Inter,ui-sans-serif,system-ui, -apple-system, "Microsoft Yahei", "Helvetica Neue", Arial;line-height:1.6;color:var(--text);background:var(--bg);margin:0}
+.container{max-width:900px;margin:0 auto;padding:1rem}
+.site-header{background:#fff;border-bottom:1px solid #eee}
+.site-title{margin:0;padding:1rem 0;display:inline-block}
+.site-title a{color:var(--text);text-decoration:none}
+.site-nav{float:right;padding-top:1rem}
+.site-nav a{margin-left:1rem;color:#555;text-decoration:none}
+.hero{background:linear-gradient(90deg,#e6fffa,#fff);padding:2rem 0;margin-bottom:1rem}
+.lead{color:#444}
+.posts .post{background:#fff;padding:1rem;margin-bottom:.75rem;border:1px solid #eee;border-radius:6px}
+.post-title{margin:0 0 .25rem 0}
+.post-title a{color:var(--accent);text-decoration:none}
+.post-meta{color:#777;font-size:.95rem}
+.about{background:#fff;padding:1rem;margin-top:1rem;border:1px solid #eee;border-radius:6px}
+.site-footer{margin-top:2rem;padding:1rem 0;color:#666;border-top:1px solid #eee;background:#fff}
+.post-single .post-content{margin-top:1rem}
+
+/* Code block and inline code styling (compatible with Pygments .codehilite) */
+pre code, pre, .codehilite {
+  background: #0f1724;
+  color: #e6eef6;
+  padding: 1rem;
+  display: block;
+  overflow:auto;
+  border-radius:6px;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: .95rem;
+}
+.codehilite .linenums { color: #9aa7b0; }
+code { background:#f5f7fa;padding:0.15rem 0.3rem;border-radius:4px }
+
+/* Table styles for Markdown tables */
+table { border-collapse: collapse; width:100%; margin-top:0.5rem }
+table th, table td { border:1px solid #e6eef6; padding:0.5rem; text-align:left }
+
+
+@media (max-width:600px){
+  .site-nav{float:none;text-align:right}
+  .container{padding:0.75rem}
+}
